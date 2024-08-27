@@ -10,7 +10,7 @@ module Scenes
         def initialize
             @fonts = {
                 base: Gosu::Font.new(32, name: FONT_FILENAME),
-                title: Gosu::Font.new(48, name: FONT_FILENAME),
+                title: Gosu::Font.new(100, name: FONT_FILENAME),
                 score: Gosu::Font.new(64, name: FONT_FILENAME),
             }
 
