@@ -25,8 +25,9 @@ module Scenes
         # 1フレーム分の描画処理
         def draw
         #   @bg_img.draw(0, 0, 0)
-          draw_text("Ruby合宿2024夏 Example Game", :center, 280, font: :title, color: :red)
-          draw_text("Push SPACE Key to start", :center, 350)
+          draw_text("Ruby合宿2024", :center, 190, font: :title, color: :red)
+          draw_text("人生ゲーム", :center, 270, font: :title, color: :red)
+          draw_text("Push SPACE Key to start", :center, 370, color: :white)
         end
       end
     end
