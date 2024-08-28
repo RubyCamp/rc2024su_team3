@@ -15,7 +15,7 @@ class GameWindow < Gosu::Window
     @scene_manager = Scenes::Manager.instance
     @scene_manager.add(:title, Scenes::Title::Director.new)
     @scene_manager.add(:game, Scenes::Game::Director.new)
-    @scene_manager.set(:title)
+    @scene_manager.set(:game)
   end
 
   # 1フレーム分の更新処理

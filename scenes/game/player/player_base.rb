@@ -3,7 +3,7 @@ module Scenes
         class Player_base
 
             def initialize
-
+                
             end
         end
     end
