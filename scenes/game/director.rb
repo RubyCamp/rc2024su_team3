@@ -1,9 +1,16 @@
+require_relative 'player/player'
 require_relative 'boad/boad'
+
 module Scenes
     module Game
         class Director < DirectorBase
             def initialize
-                @boad = Boad.new
+                @player_1 = Scenes::Game::Player.new(550, 500, "player1", "image/player1 message window.png") #プレイヤーを作る、枠の座標
+                @player_2 = Scenes::Game::Player.new(660, 500, "player2","image/player2 message window.png")
+                @player_3 = Scenes::Game::Player.new(550, 550, "player3", "image/player3 message window.png")
+                @player_4 = Scenes::Game::Player.new(660, 550, "player4", "image/player4 message window.png")
+              
+              　@boad = Boad.new
             end
 
             # 1フレーム分の更新処理
@@ -13,8 +20,12 @@ module Scenes
 
             # 1フレーム分の描画処理
             def draw
+                @player_1.draw #プレイヤー１を表示
+                @player_2.draw
+                @player_3.draw
+                @player_4.draw
+              
                 @boad.draw
-
             end
         end
     end
