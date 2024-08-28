@@ -1,15 +1,11 @@
-#require_relative '../../director_base'
-#require_relative 'base'
+require_relative '../../director_base'
+require_relative 'base'
 
 module Scenes
     module Game
         module Event
 
             class Bad < Base
-
-                def event_color
-                    event_color = 0xff_ff0000 #赤色
-                end
 
                 def event_check
                     if @bad_flag == 1 

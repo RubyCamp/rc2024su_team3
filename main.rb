@@ -1,6 +1,8 @@
 require 'gosu'
 
 require_relative 'scenes/manger'
+require_relative 'scenes/game/event/base'
+require_relative 'scenes/game/boad/boad'
 require_relative 'scenes/director_base'
 require_relative 'scenes/title/director'
 require_relative 'scenes/setting/director'
@@ -22,6 +24,7 @@ class GameWindow < Gosu::Window
     @scene_manager.set(:title)
     # 作業用コード
     # @scene_manager.set(:ending)
+    @scene_manager.set(:game)
   end
 
   # 1フレーム分の更新処理

@@ -1,33 +1,24 @@
-#require_relative '../../director_base'
+require 'gosu'
+require_relative '../../director_base'
 
 module Scenes
     module Game
         module Event
-            class Base < ::Scenes::DirectorBase
+            class Base
 
                 def initialize
-                    num_luckyevnt = 5
-                    num_badevnt = 5
-                    num_neutralevnt = 5
+                    @num_lucky_event = 5
+                    @num_bad_event = 5
+                    @num_neutral_event = 5
                 end
 
-                def mas_color(color)
-                    draw_text
-                    color = @colors[:black]
-                    if opt.has_key?(:color)
-                      if(opt[:color].is_a?(Symbol))
-                        color = @colors[opt[:color]]
-                      else
-                        color = opt[:color]
-                      end
-                    end
-                end
-
-                def select_event
-                    @event_flag = get_event_flag #イベントの種類を取得
-                    @lucky_flag = select_event_flag(num_luckyevnt) #運のいいイベントを取得
-                    @bad_flag = select_event_flag(num_badevnt) #運の悪いイベントを取得
-                    @neutral_flag = select_event_flag(num_neutralevnt) #日常のイベントを取得
+                def data
+                    event_flag = get_event_flag #イベントの種類を取得
+                    @lucky_flag = select_event_flag(5) #運のいいイベントを取得
+                    @bad_flag = select_event_flag(5) #運の悪いイベントを取得
+                    @neutral_flag = select_event_flag(5) #日常のイベントを取得
+                    color = event_color(event_flag)
+                    return color
                 end
 
                 def get_event_flag
@@ -37,6 +28,21 @@ module Scenes
                 def select_event_flag(num)
                     return rand(1..num)
                 end
+
+                def event_color(event_flag)
+                    if event_flag == 1
+                        color = Gosu::Color::YELLOW
+                    elsif event_flag == 2
+                        color = Gosu::Color::RED
+                    elsif event_flag == 3
+                        color = Gosu::Color::GRAY
+                    else 
+                        color = Gosu::Color::WHITE
+                    end
+
+                    return color
+                end
+
             end
         end
     end

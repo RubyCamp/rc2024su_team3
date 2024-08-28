@@ -11,21 +11,21 @@ module Scenes
                 @player_4 = Scenes::Game::Player.new(660, 550, "player4", "image/player4 message window.png")
               
                 @boad = Boad.new
+                @players = [@player_1, @player_2, @player_3, @player_4]
             end
 
             # 1フレーム分の更新処理
             def update(opt = {})
                 # ゴール判定処理
-                
+              
+                @boad.update
             end
 
             # 1フレーム分の描画処理
             def draw
-                @player_1.draw #プレイヤー１を表示
-                @player_2.draw
-                @player_3.draw
-                @player_4.draw
-              
+                @players[0..(Scenes::Manager.instance.number-1)].each do |player|
+                    player.draw
+                end
                 @boad.draw
             end
         end
