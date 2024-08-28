@@ -5,6 +5,7 @@ require_relative 'scenes/director_base'
 require_relative 'scenes/title/director'
 require_relative 'scenes/setting/director'
 require_relative 'scenes/game/director'
+require_relative 'scenes/ending/director'
 
 class GameWindow < Gosu::Window
   
@@ -17,7 +18,10 @@ class GameWindow < Gosu::Window
     @scene_manager.add(:title, Scenes::Title::Director.new)
     @scene_manager.add(:setting, Scenes::Setting::Director.new)
     @scene_manager.add(:game, Scenes::Game::Director.new)
+    @scene_manager.add(:ending, Scenes::Ending::Director.new)
     @scene_manager.set(:title)
+    # 作業用コード
+    # @scene_manager.set(:ending)
   end
 
   # 1フレーム分の更新処理

@@ -15,7 +15,8 @@ module Scenes
 
             # 1フレーム分の更新処理
             def update(opt = {})
-
+                # ゴール判定処理
+                
             end
 
             # 1フレーム分の描画処理
