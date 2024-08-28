@@ -18,7 +18,7 @@ module Scenes
             def update(opt = {})
                 # ゴール判定処理
               
-                @boad.update
+                # @boad.update
             end
 
             # 1フレーム分の描画処理
