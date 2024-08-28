@@ -44,12 +44,16 @@ module Scenes
             if @choice == "number"
                 if key_push?(Gosu::KB_1)
                     @number = 1
+                    Scenes::Manager.instance.number = 1
                 elsif key_push?(Gosu::KB_2)
                     @number = 2
+                    Scenes::Manager.instance.number = 2
                 elsif key_push?(Gosu::KB_3)
                     @number = 3
+                    Scenes::Manager.instance.number = 3
                 elsif key_push?(Gosu::KB_4)
                     @number = 4
+                    Scenes::Manager.instance.number = 4
                 end
             end
 
