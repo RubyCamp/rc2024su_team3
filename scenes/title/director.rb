@@ -16,10 +16,10 @@ module Scenes
         def update(opt = {})
         #   @bgm.play if @bgm && !@bgm.playing?
         #   # スペースキー押下でゲーム本編シーンへ切り替えを行う
-        #   if key_push?(Gosu::KB_SPACE)
-        #     transition(:game)
-        #     @bgm.stop if @bgm && @bgm.playing?
-        #   end
+          if key_push?(Gosu::KB_SPACE)
+            transition(:game)
+            @bgm.stop if @bgm && @bgm.playing?
+          end
         end
   
         # 1フレーム分の描画処理
