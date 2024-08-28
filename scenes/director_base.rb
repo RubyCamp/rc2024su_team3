@@ -9,9 +9,10 @@ module Scenes
         # コンストラクタ
         def initialize
             @fonts = {
-                base: Gosu::Font.new(32, name: FONT_FILENAME),
-                title: Gosu::Font.new(48, name: FONT_FILENAME),
-                score: Gosu::Font.new(64, name: FONT_FILENAME),
+                title: Gosu::Font.new(100, name: FONT_FILENAME),
+                base0: Gosu::Font.new(24, name: FONT_FILENAME),
+                base1: Gosu::Font.new(32, name: FONT_FILENAME),
+                base2: Gosu::Font.new(64, name: FONT_FILENAME),
             }
 
             @colors = {
@@ -20,7 +21,30 @@ module Scenes
                 red: 0xff_ff0000,
                 green: 0xff_00ff00,
                 blue: 0xff_0000ff,
+                yellow: 0xff_ffff00,
             }
+
+            # フレームと秒数をカウントするための初期値を設定
+            @fps_count = 0
+            @time_sec = 0
+            @time_min = 0
+        end
+
+        def time_count
+          # 秒数のカウントを行う（1秒間に60フレームの処理を行う）
+          if @fps_count < 60
+              @fps_count += 1
+          elsif @fps_count == 60 && @time_sec < 60
+              @fps_count = 0
+              @time_sec += 1
+          elsif @fps_count == 60 && @time_sec == 60
+              @fps_count = 0
+              @time_sec = 0
+              @time_min += 1
+          end
+          # puts "#{@time_min}分#{@time_sec}秒"
+          @time_min
+          @time_sec
         end
 
         # 1フレーム分の更新処理
