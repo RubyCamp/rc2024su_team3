@@ -3,6 +3,7 @@ require 'gosu'
 require_relative 'scenes/manger'
 require_relative 'scenes/director_base'
 require_relative 'scenes/title/director'
+require_relative 'scenes/setting/director'
 require_relative 'scenes/game/director'
 
 class GameWindow < Gosu::Window
@@ -14,6 +15,7 @@ class GameWindow < Gosu::Window
     # シーンの生成
     @scene_manager = Scenes::Manager.instance
     @scene_manager.add(:title, Scenes::Title::Director.new)
+    @scene_manager.add(:setting, Scenes::Setting::Director.new)
     @scene_manager.add(:game, Scenes::Game::Director.new)
     @scene_manager.set(:title)
   end
