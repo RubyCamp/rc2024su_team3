@@ -1,3 +1,6 @@
+# require_relative '../../director_base'
+# require_relative 'base'
+
 module Scenes
     module Game
         module Event
