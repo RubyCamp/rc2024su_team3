@@ -18,10 +18,10 @@ module Scenes
         def update(opt = {})
         #   @bgm.play if @bgm && !@bgm.playing?
         #   # スペースキー押下でゲーム本編シーンへ切り替えを行う or エンターキー
-            if key_push?(Gosu::KB_SPACE) || @choice == "game" && key_push?(Gosu::KB_ENTER)
+            if key_push?(Gosu::KB_SPACE) || @choice == "game" && key_push?(Gosu::KB_RETURN)
                 transition(:game)
                 # @bgm.stop if @bgm && @bgm.playing?
-            elsif key_push?(Gosu::KB_S) || @choice == "setting" && key_push?(Gosu::KB_ENTER)
+            elsif key_push?(Gosu::KB_S) || @choice == "setting" && key_push?(Gosu::KB_RETURN)
                 transition(:setting)
             end
 
