@@ -10,7 +10,7 @@ module Scenes
                 @player_3 = Scenes::Game::Player.new(550, 550, "player3", "image/player3 message window.png")
                 @player_4 = Scenes::Game::Player.new(660, 550, "player4", "image/player4 message window.png")
               
-              　@boad = Boad.new
+                @boad = Boad.new
             end
 
             # 1フレーム分の更新処理
