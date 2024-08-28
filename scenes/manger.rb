@@ -5,9 +5,12 @@ module Scenes
     class Manager
         include Singleton
 
+        attr_accessor :number
+
         def initialize
             @scenes = {}
             @current = nil
+            @number = 2
         end
 
         def add(label, director)
