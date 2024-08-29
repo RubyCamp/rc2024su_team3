@@ -36,6 +36,10 @@ module Scenes
             @scenes[@current].draw
         end
 
+        def setting(mode)
+            
+        end
+
         private
 
         # カレントシーンのラベルとそれに対応するディレクターオブジェクトが実在するかどうかの判定
