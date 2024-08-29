@@ -10,7 +10,7 @@ module Scenes
         
         # コメントアウトしてるコードは削除して良い（参考程度に残してます）
 
-        #   @bg_img = Gosu::Image.new("images/bg_title.png", tileable: true)
+           @bg_img = Gosu::Image.new("image/title_picture.jpg", tileable: true)
         #   @bgm = load_bgm("bgm1.mp3", 0.3)
         end
   
@@ -35,7 +35,7 @@ module Scenes
   
         # 1フレーム分の描画処理
         def draw
-        #   @bg_img.draw(0, 0, 0)
+           @bg_img.draw(0, 0, 0)
 
             # 継承元のメソッド内のインスタンス変数を呼び出すために記載
             time_count
