@@ -17,8 +17,7 @@ module Scenes
             # 1フレーム分の更新処理
             def update(opt = {})
                 # ゴール判定処理
-              
-                # @boad.update
+                transition(:ending) if key_push?(Gosu::KB_G)
             end
 
             # 1フレーム分の描画処理

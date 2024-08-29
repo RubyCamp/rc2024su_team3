@@ -13,7 +13,6 @@ module Scenes
                 @progress = 0
                 @message_window_player1 = Gosu::Image.new(image_path, tileable: true)
                 @name = name
-                
             end
             def draw
                 @message_window_player1.draw(@message_x, @message_y, 0)

@@ -1,3 +1,6 @@
+require_relative '../game/director'
+require_relative '../game/player/player'
+
 module Scenes
     module Ending
         # エンディングの担当ディレクタークラス
@@ -6,6 +9,9 @@ module Scenes
             def initialize
             super
             #   @bg_img = Gosu::Image.new("images/bg_game_over.png", tileable: true)
+                @first = nil
+                @second = nil
+                @third = nil
             end
   
             # 1フレーム分の更新処理
@@ -15,6 +21,8 @@ module Scenes
   
             # 1フレーム分の描画処理
             def draw
+                
+
                 draw_text("Congratulation!!", :center, 100, font: :title, color: :yellow)
                 draw_text("1位: #{}!!", :center, 250, font: :base2, color: :white)
                 draw_text("2位: #{}!", :center, 350, font: :base2, color: :white)
