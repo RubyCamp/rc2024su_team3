@@ -5,7 +5,7 @@ module Scenes
         # コンストラクタ
             def initialize
             super
-            #   @bg_img = Gosu::Image.new("images/bg_game_over.png", tileable: true)
+               @bg_img = Gosu::Image.new("image/ending.jpg", tileable: true)
             end
   
             # 1フレーム分の更新処理
@@ -19,7 +19,7 @@ module Scenes
                 draw_text("1位: #{}!!", :center, 250, font: :base2, color: :white)
                 draw_text("2位: #{}!", :center, 350, font: :base2, color: :white)
                 draw_text("3位: #{}", :center, 450, font: :base2, color: :white)
-            #   @bg_img.draw(0, 0, 0)
+               @bg_img.draw(0, 0, 0)
             end
         end
     end
