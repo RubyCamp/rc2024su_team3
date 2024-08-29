@@ -1,5 +1,8 @@
 require_relative 'player/player'
 require_relative 'boad/boad'
+require_relative 'boad/middle_board'
+require_relative 'boad/short_board'
+
 
 module Scenes
     module Game
@@ -10,7 +13,9 @@ module Scenes
                 @player_3 = Scenes::Game::Player.new(550, 550, "player3", "image/player3 message window.png")
                 @player_4 = Scenes::Game::Player.new(660, 550, "player4", "image/player4 message window.png")
               
-                @boad = Boad.new
+                #@boad = Boad.new
+                @boad = Middle_board.new
+                #@boad = Short_board.new
                 @players = [@player_1, @player_2, @player_3, @player_4]
             end
 
