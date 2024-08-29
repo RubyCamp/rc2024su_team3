@@ -4,8 +4,7 @@ module Scenes
             class Job
 
                 def initialize
-                    job i
-
+                    i = 0
                 end
 
                 def change_job
