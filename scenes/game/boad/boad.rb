@@ -7,6 +7,7 @@ module Scenes
         class Boad < ::Scenes::Game::Event::Base
             
             def initialize
+                # 継承したクラスの初期条件を追加
                 super
                 # マスに表示するfontサイズ
                 @font = Gosu::Font.new(30)
@@ -21,6 +22,8 @@ module Scenes
                         [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0],
                         [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0],
                         [3,0,0,0,0,14,0,0,0,0,13,0,0,0,0,12,0,0]]
+                
+                #イベントに合わせた色の情報のマップデータを作成
                 @map_colors = []
                 map_column_size = @map.first.size
                 @map.size.times do
