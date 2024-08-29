@@ -11,6 +11,10 @@ module Scenes
             @modes = ["子供だけ", "大人だけ", "一生"]
             @mode = @modes[0] 
             @choice = "number"
+
+            @bg_img = Gosu::Image.new("image/setting_picture1.jpg", tileable: true)
+            #   @bgm = load_bgm("bgm1.mp3", 0.3)
+
         end
   
         # 1フレーム分の更新処理
@@ -94,7 +98,7 @@ module Scenes
                 draw_text("モード設定:  #{@mode}モード", :center, 350, font: :base1, color: :white)
                 draw_text("Exit", :center, 525, font: :base1, color: :white)
             end
-            
+            @bg_img.draw(0, 0, 0)
             draw_text("[ push_key ] \n 1: 1人     2: 2人\n 3: 3人     4: 4人", :center, 250, font: :base0, color: :white)
             draw_text("[ push_key ] \n 1: 子供だけモード \n 2: 大人だけモード \n 3: 一生モード", :center, 400, font: :base0, color: :white)
         end

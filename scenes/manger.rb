@@ -25,6 +25,7 @@ module Scenes
 
         # 1フレームの場面処理の呼び出し
         def update(opt = {})
+            # p ['Scenes::Manager#update', @current]
             validate_current
             @scenes[@current].update(opt)
         end
