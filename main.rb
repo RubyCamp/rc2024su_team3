@@ -24,7 +24,6 @@ class GameWindow < Gosu::Window
     @scene_manager.set(:title)
     # 作業用コード
     # @scene_manager.set(:ending)
-    @scene_manager.set(:title)
   end
 
   # 1フレーム分の更新処理

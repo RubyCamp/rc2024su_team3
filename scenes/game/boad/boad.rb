@@ -36,6 +36,7 @@ module Scenes
             # end
 
             def draw
+                # 背景色の設定
                 Gosu.draw_rect(0,0,800,600,Gosu::Color::BLACK,-1)
                 draw_grid
             end
