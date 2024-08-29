@@ -39,6 +39,11 @@ module Scenes
                         end
                     end
                 end
+                # ゴール判定処理
+                if key_push?(Gosu::KB_G)
+                    transition(:ending)
+                end
+            end
 
                 if Gosu.button_down?(Gosu::MsRight)
                     cards_shuffle
@@ -53,8 +58,6 @@ module Scenes
              
             # 1フレーム分の描画処理
             def draw
-                
-
                 @players[0..(Scenes::Manager.instance.number-1)].each do |player|
                     player.draw
                 end
